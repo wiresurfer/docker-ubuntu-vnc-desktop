@@ -38,6 +38,17 @@ docker run -it --rm -p 6080:80 -p 5900:5900 -e VNC_PASSWORD=mypassword ct2034/vn
 A prompt will ask password either in the browser or vnc viewer.
 
 
+Mount directory
+---------------
+
+Mount host directory to docker using
+
+```
+docker run -v <your directory>:/mnt/ -it --rm -p 6080:80 ct2034/vnc-ros-kinetic-full
+
+```
+
+
 Troubleshooting and FAQ
 ==================
 
