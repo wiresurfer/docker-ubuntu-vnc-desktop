@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # setup keys
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 421C365BD9FF1F717815A3895523BAEEB01FA116
+RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 # setup sources.list
 RUN echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list
@@ -59,7 +59,7 @@ RUN rosdep init \
 ENV ROS_DISTRO kinetic
 RUN apt-get update && apt-get install -y \
 #    ros-kinetic-ros-core=1.3.1-0* \
-    ros-kinetic-desktop-full=1.3.1-0* \
+    ros-kinetic-desktop-full \
     #              A
     #              +--- full desktop \
     && rm -rf /var/lib/apt/lists/*
@@ -75,6 +75,7 @@ RUN apt-get update && apt-get install -y \
     terminator \
     gedit \
     okular \
+    vim \
     && rm -rf /var/lib/apt/lists/*
 
 # tini for subreap
