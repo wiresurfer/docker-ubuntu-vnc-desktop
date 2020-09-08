@@ -7,4 +7,4 @@ git clone -b calibration_devel https://github.com/fmauch/universal_robot.git src
 apt update && apt-get upgrade
 rosdep update
 rosdep install --from-paths src --ignore-src -y
-catkin build
+catkin_make
