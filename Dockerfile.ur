@@ -95,7 +95,6 @@ ENV HOME=/home/ubuntu \
     SHELL=/bin/bash
 COPY ur_driver.sh /home/ubuntu/
 RUN chmod +x /home/ubuntu/ur_driver.sh
-RUN apt-get install python-catkin-tools 
 RUN bash /home/ubuntu/ur_driver.sh
 
 ENTRYPOINT ["/startup.sh"]
